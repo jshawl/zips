@@ -13,7 +13,9 @@ submit.addEventListener("submit", function( event ){
 })
 
 clear.addEventListener("click", function(){
-  setAllMap(null)
+  if(confirm("Are you sure you want to remove all markers?")){
+    setAllMap(null)
+  }
 })
 
 var map
@@ -22,7 +24,10 @@ function initialize() {
   geocoder = new google.maps.Geocoder()
   var mapOptions = {
     zoom: 10,
-    center: new google.maps.LatLng(30.2500, -97.7500)
+    center: new google.maps.LatLng(30.2500, -97.7500),
+    zoomControl: false,
+    streetViewControl: false,
+    mapTypeControl: false
   }
   map = new google.maps.Map(document.querySelector('.js-map'), mapOptions)
 }
