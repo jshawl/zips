@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <style>
+      *{
+        box-sizing:border-box;
+      }
+      body{
+        padding:1em;
+        margin:0;
+      }
+      input{
+        display:block;
+	width:100%;
+	padding:.5em 1em;
+	margin-bottom:1em;
+      }
+      .map{
+        margin-top:1em;
+        height: 300px;
+      }
+      h2,p{
+       margin:0;
+      }
+      .cf:after{
+        content:'';
+        display:block;
+        clear:both;
+      }
+      .left{
+        float:left;
+      }
+      .right{
+        float:right;
+      }
+    </style>
+  </head>
+  <body>
+    <form class='js-submit'>
+    <input type="text" placeholder="name" class="js-name" value="My Patient">
+    <input type="number" placeholder="zipcode" class="js-zipcode" value="78710">
+      <div class='cf'>
+	<button type="submit" class="left js-locate">Locate</button>
+	<button type="button" class="right js-clear">Clear All</button>
+      </div>
+    </form>
+    <div class='js-map map'></div>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+  </body>
+</html>
